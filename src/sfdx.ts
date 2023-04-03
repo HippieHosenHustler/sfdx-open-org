@@ -13,6 +13,10 @@ export async function getOrgs() {
     }
 }
 
+export function openOrg(org: string) {
+    exec(`sfdx org open --target-org ${org}`)
+}
+
 function buildList(input: string) {
     return input
         .split("\n")
