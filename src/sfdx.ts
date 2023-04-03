@@ -20,10 +20,8 @@ export function openOrg(org: string) {
 function buildList(input: string) {
     return input
         .split("\n")
-        .filter((i) => i.startsWith("|"))
-        .filter((i) => !i.includes("ORG ID"))
-        .filter((i) => !i.includes("──────────"))
+        .filter((i) => i.startsWith("|") && !i.includes("ORG ID") && !i.includes("──────────"))
         .map(i =>
-            i.replaceAll("|", "").trim().split(" ")[0]
+            i.replace("|", "").trim().split(" ")[0]
         );
 }
