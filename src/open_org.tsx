@@ -6,24 +6,24 @@ import { useState } from "react";
 
 export default function Main(): JSX.Element {
 
-  const { data, isLoading } = usePromise(getOrgs, []);
+    const { data, isLoading } = usePromise(getOrgs, []);
 
-  return (
-      <List
-        isLoading={isLoading}
-        navigationTitle="Orgs"
-      >
-        {data?.map((item) => (
-          <List.Item
-            title={item}
-          ></List.Item>
-        ))}
-      </List>
-  );
+    return (
+        <List
+            isLoading={isLoading}
+            navigationTitle="Orgs"
+        >
+            {data?.map((item) => (
+                <List.Item
+                    title={item}
+                ></List.Item>
+            ))}
+        </List>
+    );
 }
 
 function executeOrgList() {
-  exec("sfdx force org list", (error, stdout, stderr) => {
+    exec("sfdx force org list", (error, stdout, stderr) => {
 
-  });
+    });
 }
