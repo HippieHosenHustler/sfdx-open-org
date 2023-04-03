@@ -1,8 +1,6 @@
-import { Detail, List } from "@raycast/api";
-import { exec } from "child_process";
+import { List } from "@raycast/api";
 import { usePromise } from "@raycast/utils";
 import { getOrgs } from "./sfdx";
-import { useState } from "react";
 
 export default function Main(): JSX.Element {
 
@@ -20,10 +18,4 @@ export default function Main(): JSX.Element {
             ))}
         </List>
     );
-}
-
-function executeOrgList() {
-    exec("sfdx force org list", (error, stdout, stderr) => {
-
-    });
 }

@@ -5,7 +5,7 @@ const runAsync = promisify(exec);
 
 export async function getOrgs() {
     try {
-        const { stdout, stderr } = await runAsync("sfdx org list");
+        const { stdout } = await runAsync("sfdx org list");
         return buildList(stdout);
     } catch (e) {
         console.error(e);
@@ -14,7 +14,7 @@ export async function getOrgs() {
 }
 
 function buildList(input: string) {
-    const result = input
+    return input
         .split("\n")
         .filter((i) => i.startsWith("|"))
         .filter((i) => !i.includes("ORG ID"))
@@ -22,6 +22,4 @@ function buildList(input: string) {
         .map(i =>
             i.replaceAll("|", "").trim().split(" ")[0]
         );
-
-    return result;
 }

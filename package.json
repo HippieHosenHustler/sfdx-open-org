@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "sfdx-open-org",
   "title": "sfdx-open-org",
-  "description": "",
+  "description": "An extension for raycast that lists available orgs and opens them",
   "icon": "command-icon.png",
   "author": "Yltys",
   "license": "MIT",
