@@ -15,6 +15,7 @@ export default function Main(): JSX.Element {
                 <List.Item
                     title={item}
                     actions={<Actions org={item} />}
+                    icon={"command-icon.png"}
                 ></List.Item>
             ))}
         </List>
