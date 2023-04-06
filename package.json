@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "sfdx-open-org",
-  "title": "sfdx-open-org",
+  "name": "sfdx-manage-orgs",
+  "title": "sfdx-manage-orgs",
   "description": "An extension for raycast that lists available orgs and opens them",
   "icon": "command-icon.png",
   "author": "Yltys",
