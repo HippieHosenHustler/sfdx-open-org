@@ -24,6 +24,9 @@ export default function Main(): JSX.Element {
             </List.Section>
 
             <List.Section title="Open Org">
+                {!data && (
+                    <List.Item title="Loading Orgs..." ></List.Item>
+                )}
                 {data?.orgs?.map((item) => (
                     <List.Item
                         title={item}
