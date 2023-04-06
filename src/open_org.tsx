@@ -11,7 +11,7 @@ export default function Main(): JSX.Element {
             isLoading={isLoading}
             navigationTitle="Orgs"
         >
-            {data?.map((item) => (
+            {data?.orgs?.map((item) => (
                 <List.Item
                     title={item}
                     actions={<Actions org={item} />}
