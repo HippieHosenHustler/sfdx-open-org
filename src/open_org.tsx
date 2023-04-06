@@ -11,13 +11,26 @@ export default function Main(): JSX.Element {
             isLoading={isLoading}
             navigationTitle="Orgs"
         >
-            {data?.orgs?.map((item) => (
+            <List.Section title="Actions">
                 <List.Item
-                    title={item}
-                    actions={<Actions org={item} />}
+                    title="Authorize new Org"
                     icon={"command-icon.png"}
                 ></List.Item>
-            ))}
+
+                <List.Item
+                    title="Create a Scratch Org"
+                    icon={"command-icon.png"}
+                ></List.Item>
+            </List.Section>
+
+            <List.Section title="Open Org">
+                {data?.orgs?.map((item) => (
+                    <List.Item
+                        title={item}
+                        actions={<Actions org={item} />}
+                    ></List.Item>
+                ))}
+            </List.Section>
         </List>
     );
 }
