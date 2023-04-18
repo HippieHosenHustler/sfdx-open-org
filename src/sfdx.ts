@@ -32,3 +32,22 @@ function buildList(input: string) {
             i.replace("|", "").trim().split(" ")[0]
         );
 }
+
+export function authenticateOrg(props: { alias: string, instanceUrl: string, defaultDevHub: boolean }) {
+    let command = "sf org login web";
+
+    if (props.alias != "") {
+        command += " --alias " + props.alias;
+    }
+
+    if (props.instanceUrl != "") {
+        command += " --instanceUrl " + props.instanceUrl;
+    }
+
+    if (props.defaultDevHub) {
+        command += " --set-default";
+    }
+
+    exec(command);
+
+}

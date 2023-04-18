@@ -8,10 +8,11 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "open_org",
-      "title": "Open Org",
+      "name": "manage_orgs",
+      "title": "Manage Orgs",
       "description": "Open an org from sfdx",
-      "mode": "view"
+      "mode": "view",
+      "icon": "command-icon.png"
     }
   ],
   "dependencies": {
