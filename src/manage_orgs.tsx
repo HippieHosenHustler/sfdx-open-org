@@ -24,17 +24,19 @@ export default function Main(): JSX.Element {
                             />
                         </ActionPanel>
                     }
+                    key="new"
                 ></List.Item>
 
             </List.Section>
 
             <List.Section title="Open Org">
                 {!data && (
-                    <List.Item title="Loading Orgs..."></List.Item>
+                    <List.Item title="Loading Orgs..." key="loading"></List.Item>
                 )}
                 {data?.orgs?.map((item) => (
                     <List.Item
                         title={item}
+                        key={item}
                         actions={<Actions org={item} />}
                     ></List.Item>
                 ))}

@@ -5,10 +5,10 @@ const runAsync = promisify(exec);
 
 export async function getOrgs() {
     try {
-        const { stdout } = await runAsync("sfdx org list");
-        const orglist = buildList(stdout);
+        const { stdout } = await runAsync("sf org list");
+        const orgList = buildList(stdout);
         return {
-            orgs: orglist,
+            orgs: orgList,
             error: null
         };
     } catch (e) {
@@ -21,7 +21,7 @@ export async function getOrgs() {
 }
 
 export function openOrg(org: string) {
-    exec(`sfdx org open --target-org ${org}`);
+    exec(`sf org open --target-org ${org}`);
 }
 
 function buildList(input: string) {
